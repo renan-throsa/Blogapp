@@ -7,15 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Web", "Blogapp.Web.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Entities", "..\Blogapp.Domain.Entities\Blogapp.Domain.Entities.csproj", "{8AFC9BB3-E650-424F-9A48-AEDF5A923FF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Repositories.Impl", "..\Blogapp.Domain.Repositories\Blogapp.Domain.Repositories.Impl.csproj", "{FA096ED8-7F2E-4CF3-9039-9497BC7D687E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Repositories", "..\Blogapp.Domain.Repositories\Blogapp.Domain.Repositories.csproj", "{FA096ED8-7F2E-4CF3-9039-9497BC7D687E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Business", "..\Blogapp.Domain.Business\Blogapp.Domain.Business.csproj", "{3D318F82-4C0D-49A6-A81B-31687DD08D8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Services", "..\Blogapp.Domain.Business\Blogapp.Domain.Services.csproj", "{3D318F82-4C0D-49A6-A81B-31687DD08D8B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.Repositories.Contract", "..\Blogapp.Domain.Repositories.Contract\Blogapp.Domain.Repositories.Contract.csproj", "{005030FD-DDBD-4C51-A275-C3DC58786579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Domain.IRepositories", "..\Blogapp.Domain.Repositories.Contract\Blogapp.Domain.IRepositories.csproj", "{005030FD-DDBD-4C51-A275-C3DC58786579}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.DependencyInjection", "..\Blogapp.DependencyInjection\Blogapp.DependencyInjection.csproj", "{05795A83-9722-48B1-9D5E-CC041E48A362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.IoC", "..\Blogapp.DependencyInjection\Blogapp.IoC.csproj", "{05795A83-9722-48B1-9D5E-CC041E48A362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogapp.Api", "..\Blogapp.Api\Blogapp.Api.csproj", "{D2705AA4-F6DB-45C9-94B5-675FAD4745B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogapp.Api", "..\Blogapp.Api\Blogapp.Api.csproj", "{D2705AA4-F6DB-45C9-94B5-675FAD4745B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogapp.Domain.IServices", "..\Blogapp.Domain.IServices\Blogapp.Domain.IServices.csproj", "{32F821D3-BE5B-4B4F-B81F-25A080C131A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D2705AA4-F6DB-45C9-94B5-675FAD4745B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2705AA4-F6DB-45C9-94B5-675FAD4745B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2705AA4-F6DB-45C9-94B5-675FAD4745B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F821D3-BE5B-4B4F-B81F-25A080C131A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F821D3-BE5B-4B4F-B81F-25A080C131A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F821D3-BE5B-4B4F-B81F-25A080C131A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F821D3-BE5B-4B4F-B81F-25A080C131A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
