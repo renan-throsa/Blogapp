@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entities;
+﻿using Blogapp.Domain.Entities.Entiti;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;

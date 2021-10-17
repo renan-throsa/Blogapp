@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entities;
+﻿using Blogapp.Domain.Entities.Entiti;
 
 namespace Blogapp.Domain.Repositories.Contract.Interfaces
 {

@@ -1,4 +1,4 @@
-﻿namespace Blogapp.Domain.Entities.Entities.DTOs
+﻿namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
     public abstract class BaseDTO<T> where T : BaseEntity
     {

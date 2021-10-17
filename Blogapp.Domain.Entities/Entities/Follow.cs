@@ -1,4 +1,4 @@
-﻿namespace Blogapp.Domain.Entities.Entities
+﻿namespace Blogapp.Domain.Entities.Entiti
 {
     class Follow
     {

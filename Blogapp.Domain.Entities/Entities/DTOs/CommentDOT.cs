@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Blogapp.Domain.Entities.Entities.DTOs
+namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
     class CommentDOT : BaseDTO<Comment>
     {

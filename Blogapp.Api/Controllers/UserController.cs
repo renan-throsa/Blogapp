@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entities.DTOs;
+﻿using Blogapp.Domain.Entities.Entiti.DTOs;
 using Blogapp.Domain.IServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -35,20 +35,23 @@ namespace Blogapp.Api.Controllers
 
         // POST api/<User>
         [HttpPost]
-        public IActionResult Post([FromBody] UserDTO dto)
+        public IActionResult Post([FromBody] UserDTO dTO)
         {
-            return Ok(userService.Add(dto));
+            var id = userService.Add(dTO).ToString();
+            var url = Url.Action("Get", new { id });
+            return Created(url, id);
         }
 
         // PUT api/<User>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put([FromBody] UserDTO dTO)
         {
+
         }
 
         // DELETE api/<User>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
         }
     }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blogapp.Domain.Entities.Entities.DTOs
+namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
     public class PostDTO : BaseDTO<Post>
     {

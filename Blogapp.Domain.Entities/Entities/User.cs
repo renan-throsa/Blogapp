@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blogapp.Domain.Entities.Entities
+namespace Blogapp.Domain.Entities.Entiti
 {
     public class User : BaseEntity
     {

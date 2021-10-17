@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blogapp.Domain.Entities.Entities
+namespace Blogapp.Domain.Entities.Entiti
 {
     public class Location
     {

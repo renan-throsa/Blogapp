@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Blogapp.Domain.Entities.Entities.DTOs;
+using Blogapp.Domain.Entities.Entiti.DTOs;
 using Blogapp.Domain.IServices;
 using Blogapp.Domain.Repositories.Contract.Interfaces;
 using MongoDB.Bson;

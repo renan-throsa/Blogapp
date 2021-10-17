@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Bson.Serialization.Conventions;
 using Blogapp.Domain.Entities.Exceptions;
 using MongoDB.Bson.Serialization;
-using Blogapp.Domain.Entities.Entities;
+using Blogapp.Domain.Entities.Entiti;
 using Blogapp.Domain.Repositories.Impl.Mapping;
 
 namespace Blogapp.Domain.Repositories
@@ -55,6 +55,7 @@ namespace Blogapp.Domain.Repositories
 
         private void RegisterMongoMap()
         {
+            _MongoMapped = true;
             if (!_MongoMapped)
             {
                 //.RegisterSerializer(typeof(DateTime), new LocalTimeMongoSerializer());

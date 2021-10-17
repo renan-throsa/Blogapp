@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entities;
+﻿using Blogapp.Domain.Entities.Entiti;
 using Blogapp.Domain.Repositories.Contract.Exceptions;
 using Blogapp.Domain.Repositories.Contract.Interfaces;
 using MongoDB.Bson;
@@ -143,7 +143,7 @@ namespace Blogapp.Domain.Repositories.Repositories
 
         public IEnumerable<T> Filter(Func<T, bool> filtro = null)
         {
-            throw new NotImplementedException();
+            
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> filtro = null)

@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entities.DTOs;
+﻿using Blogapp.Domain.Entities.Entiti.DTOs;
 
 namespace Blogapp.Domain.IServices
 {
