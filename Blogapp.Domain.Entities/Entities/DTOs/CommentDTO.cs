@@ -1,10 +1,11 @@
-﻿using MongoDB.Bson;
+﻿using Blogapp.Domain.Entities.Entities;
+using MongoDB.Bson;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
-    class CommentDOT : BaseDTO<Comment>
+    public class CommentDTO : BaseDTO<Comment>
     {
         public override Comment ToEntity()
         {
@@ -24,7 +25,7 @@ namespace Blogapp.Domain.Entities.Entiti.DTOs
         [StringLength(maximumLength: 200, MinimumLength = 2,
         ErrorMessage = "O corpo deve ter no mímino 2 caracteres e no máximo 200.")]
         public string Body { get; set; }
-        public DateTimeKind TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 
 }

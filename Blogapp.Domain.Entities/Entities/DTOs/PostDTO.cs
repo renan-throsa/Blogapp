@@ -1,10 +1,7 @@
-﻿using MongoDB.Bson;
+﻿using Blogapp.Domain.Entities.Entities;
+using MongoDB.Bson;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
@@ -15,9 +12,9 @@ namespace Blogapp.Domain.Entities.Entiti.DTOs
             return new Post
             {
                 Id = this.Id == null ? ObjectId.Empty : ObjectId.Parse(this.Id),
-                Body = this.Body,
-                Title = this.Title,
-                User = this.User?.ToEntity(),
+                Description = this.Description,
+                Picture = this.Picture,
+                User = this.User.ToEntity(),
                 TimeStamp = this.TimeStamp,
             };
         }
@@ -26,11 +23,11 @@ namespace Blogapp.Domain.Entities.Entiti.DTOs
 
         [StringLength(maximumLength: 50, MinimumLength = 2,
         ErrorMessage = "O título deve ter no mímino 2 caracteres e no máximo 200.")]
-        public string Title { get; set; }
+        public string Picture { get; set; }
 
         [StringLength(maximumLength: 200, MinimumLength = 2,
-        ErrorMessage = "O corpo deve ter no mímino 2 caracteres e no máximo 200.")]
-        public string Body { get; set; }
-        public DateTimeKind TimeStamp { get; set; }
+        ErrorMessage = "A descrição deve ter no mímino 2 caracteres e no máximo 200.")]
+        public string Description { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

@@ -1,9 +1,12 @@
-﻿namespace Blogapp.Domain.Entities.Entiti
-{
-    class Follow
-    {
-        public User Follower { get; set; }
-        public User Followed { get; set; }
+﻿using MongoDB.Bson;
+using System;
 
+namespace Blogapp.Domain.Entities.Entities
+{
+    public class Follow
+    {
+        public ObjectId FollowerId { get; set; }
+        public ObjectId FollowedId { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

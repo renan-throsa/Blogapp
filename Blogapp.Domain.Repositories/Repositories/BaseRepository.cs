@@ -1,4 +1,5 @@
-﻿using Blogapp.Domain.Entities.Entiti;
+﻿using Blogapp.Domain.Entities.Entities;
+using Blogapp.Domain.IRepositories.Filters;
 using Blogapp.Domain.Repositories.Contract.Exceptions;
 using Blogapp.Domain.Repositories.Contract.Interfaces;
 using MongoDB.Bson;
@@ -64,6 +65,11 @@ namespace Blogapp.Domain.Repositories.Repositories
             return lista;
         }
 
+        public IEnumerable<T> Filter(Func<T, bool> filtro = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<T>> AllAsync()
         {
             return await Collection.Find(new BsonDocument()).ToListAsync();
@@ -124,13 +130,19 @@ namespace Blogapp.Domain.Repositories.Repositories
             Collection.FindOneAndReplace(x => x.Id == id, entidade);
         }
 
-        public void Edit(T entidade)
+        public bool Edit(T entidade)
+        {          
+            return Collection.FindOneAndReplace(x => x.Id == entidade.Id, entidade) != null ? true : false;
+        }
+
+        public async Task<bool> EditAsync(T entidade)
         {
             if (entidade.Id == ObjectId.Empty)
             {
                 throw new MissingIdOnEntityException();
             }
-            Collection.FindOneAndReplace(x => x.Id == entidade.Id, entidade);
+
+            return await Collection.FindOneAndReplaceAsync(x => x.Id == entidade.Id, entidade) != null ? true : false;
         }
 
         public void Edit(IEnumerable<T> entidades)
@@ -141,9 +153,9 @@ namespace Blogapp.Domain.Repositories.Repositories
             }
         }
 
-        public IEnumerable<T> Filter(Func<T, bool> filtro = null)
+        public IEnumerable<T> Filter(IBaseFilter filtro)
         {
-            
+            return null;
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> filtro = null)
@@ -152,10 +164,9 @@ namespace Blogapp.Domain.Repositories.Repositories
             return resultado.ToEnumerable();
         }
 
-        public T FindByKey(object key)
+        public T FindByKey(ObjectId key)
         {
-            var idObjeto = (ObjectId)key;
-            return Collection.Find(x => x.Id == idObjeto).FirstOrDefault();
+            return Collection.Find(x => x.Id == key).FirstOrDefault();
         }
 
         public T FindByKey(string key)
@@ -166,7 +177,6 @@ namespace Blogapp.Domain.Repositories.Repositories
             }
             throw new ArgumentException($"O Id fornecido não é válido. Id = {key}");
         }
-
-
+        
     }
 }

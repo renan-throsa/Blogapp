@@ -28,31 +28,35 @@ namespace Blogapp.Api.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var user = userService.Read(id);
+            UserDTO user = userService.Read(id);
             if (user != null) return Ok(user);
             return NotFound(id);
         }
 
         // POST api/<User>
         [HttpPost]
-        public IActionResult Post([FromBody] UserDTO dTO)
+        public IActionResult Post([FromBody] UserDTO dto)
         {
-            var id = userService.Add(dTO).ToString();
+            var id = userService.Add(dto).ToString();
             var url = Url.Action("Get", new { id });
             return Created(url, id);
         }
 
         // PUT api/<User>/5
-        [HttpPut("{id}")]
-        public void Put([FromBody] UserDTO dTO)
+        [HttpPut]
+        public IActionResult Put([FromBody] UserDTO dto)
         {
-
+            UserDTO user = userService.Read(dto.Id);
+            if (user == null) return NotFound(dto.Id);
+            return Ok(userService.Edit(dto));
         }
 
         // DELETE api/<User>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public IActionResult Delete(string id)
         {
+            userService.Delete(id);
+            return Ok();
         }
     }
 }

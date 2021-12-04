@@ -1,10 +1,7 @@
-﻿using MongoDB.Bson;
+﻿using Blogapp.Domain.Entities.Entities;
+using MongoDB.Bson;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blogapp.Domain.Entities.Entiti.DTOs
 {
@@ -19,7 +16,8 @@ namespace Blogapp.Domain.Entities.Entiti.DTOs
                 Name = this.Name,
                 Location = this.Location.ToLocation(),
                 Joint = this.Joint,
-                LastSeen = this.LastSeen
+                LastSeen = this.LastSeen,
+                BirthDate = this.BirthDate,
             };
         }
 
@@ -27,11 +25,18 @@ namespace Blogapp.Domain.Entities.Entiti.DTOs
          ErrorMessage = "O nome do usuario deve ter no mímino 10 caracteres e no máximo 50 e conter somente letras.")]
         public string Name { get; set; }
 
+        [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
         public LocationDTO Location { get; set; }
 
-        [MaxLength(200, ErrorMessage = "Seção sobre pode ter no máximo 200 caracteres")]
+        [MaxLength(200, ErrorMessage = "Seção 'sobre' pode ter no máximo 200 caracteres")]
         public string About { get; set; }
         public DateTime Joint { get; set; }
         public DateTime LastSeen { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }

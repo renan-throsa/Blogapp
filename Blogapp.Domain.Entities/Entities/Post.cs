@@ -5,13 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blogapp.Domain.Entities.Entiti
+namespace Blogapp.Domain.Entities.Entities
 {
     public class Post : BaseEntity
     {
+        public ObjectId UserId { get; set; }
         public User User { get; set; }
-        public string Title { get; set; }
-        public string Body { get; set; }
-        public DateTimeKind TimeStamp { get; set; }
+
+        public string Picture { get; set; }
+        public string Description { get; set; }
+        public string[] Tags { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public IList<Comment> Comments { get; set; }
+
     }
 }

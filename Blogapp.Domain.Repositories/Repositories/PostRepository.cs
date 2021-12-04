@@ -1,4 +1,4 @@
-﻿using Blogapp.Domain.Entities.Entiti;
+﻿using Blogapp.Domain.Entities.Entities;
 using Blogapp.Domain.Repositories.Repositories;
 
 namespace Blogapp.Domain.Repositories.Impl.Repositories

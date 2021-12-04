@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 
-namespace Blogapp.Domain.Entities.Entiti
+namespace Blogapp.Domain.Entities.Entities
 {
     public abstract class BaseEntity
     {       

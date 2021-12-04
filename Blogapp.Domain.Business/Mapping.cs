@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Blogapp.Domain.Entities.Entiti;
 using Blogapp.Domain.Entities.Entiti.DTOs;
+using Blogapp.Domain.Entities.Entities;
 using MongoDB.Bson;
 
 namespace Blogapp.Domain.Services
@@ -19,7 +19,8 @@ namespace Blogapp.Domain.Services
 
             CreateMap<Location, LocationDTO>().ReverseMap();
 
-            
+            CreateMap<Comment, CommentDTO>().ReverseMap();
+
         }
     }
 }

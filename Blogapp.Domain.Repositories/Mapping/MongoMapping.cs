@@ -1,6 +1,5 @@
-﻿using Blogapp.Domain.Entities.Entiti;
+﻿using Blogapp.Domain.Entities.Entities;
 using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace Blogapp.Domain.Repositories.Impl.Mapping
 {
@@ -17,13 +16,32 @@ namespace Blogapp.Domain.Repositories.Impl.Mapping
 
         internal static BsonClassMap<User> User(BsonClassMap<User> cm)
         {
-            cm.AutoMap();
-            cm.MapMember(c => c.Name).SetElementName("name").SetIgnoreIfDefault(true);
-            cm.MapMember(c => c.Location).SetElementName("location").SetIgnoreIfDefault(true);
-            cm.MapMember(c => c.Joint).SetElementName("joint").SetIgnoreIfDefault(true);
+            cm.AutoMap();            
             return cm;
         }
 
+        internal static BsonClassMap<Post> Post(BsonClassMap<Post> cm)
+        {
+            cm.AutoMap();
+            return cm;
+        }
 
+        internal static BsonClassMap<Comment> Comment(BsonClassMap<Comment> cm)
+        {
+            cm.AutoMap();
+            return cm;
+        }
+
+        internal static BsonClassMap<Like> Like(BsonClassMap<Like> cm)
+        {
+            cm.AutoMap();
+            return cm;
+        }
+
+        internal static BsonClassMap<Follow> Follow(BsonClassMap<Follow> cm)
+        {
+            cm.AutoMap();
+            return cm;
+        }
     }
 }

@@ -3,8 +3,8 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Bson.Serialization.Conventions;
 using Blogapp.Domain.Entities.Exceptions;
 using MongoDB.Bson.Serialization;
-using Blogapp.Domain.Entities.Entiti;
 using Blogapp.Domain.Repositories.Impl.Mapping;
+using Blogapp.Domain.Entities.Entities;
 
 namespace Blogapp.Domain.Repositories
 {
@@ -22,13 +22,11 @@ namespace Blogapp.Domain.Repositories
             get { return _dataBase ?? (_dataBase = Cliente.GetDatabase(_nameDB)); }
         }
 
-
         private IMongoClient _cliente;
 
         public IMongoClient Cliente
         {
             get { return _cliente ??= new MongoClient(_settings); }
-
         }
 
         public BlogappContext(IConfiguration configuration)
@@ -38,7 +36,7 @@ namespace Blogapp.Domain.Repositories
             _settings = MongoClientSettings.FromUrl(new MongoUrl(_connectionString));
             _nameDB = Configuration.GetSection("BlogappContext:DatabaseName").Value;
             RegisterMongoMap();
-            Conectar();            
+            Conectar();
         }
 
         public void Conectar()
@@ -62,6 +60,10 @@ namespace Blogapp.Domain.Repositories
 
                 BsonClassMap.RegisterClassMap<BaseEntity>(cm => MongoMapping.BaseEntity(cm));
                 BsonClassMap.RegisterClassMap<User>(cm => MongoMapping.User(cm));
+                BsonClassMap.RegisterClassMap<Post>(cm => MongoMapping.Post(cm));
+                BsonClassMap.RegisterClassMap<Comment>(cm => MongoMapping.Comment(cm));
+                BsonClassMap.RegisterClassMap<Follow>(cm => MongoMapping.Follow(cm));
+                BsonClassMap.RegisterClassMap<Like>(cm => MongoMapping.Like(cm));
             }
         }
 

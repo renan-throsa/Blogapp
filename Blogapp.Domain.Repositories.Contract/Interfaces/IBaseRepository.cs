@@ -1,4 +1,5 @@
 ﻿using Blogapp.Domain.Entities.Entiti;
+using Blogapp.Domain.Entities.Entities;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -36,7 +37,7 @@ namespace Blogapp.Domain.Repositories.Contract.Interfaces
 
         void Edit(ObjectId id, T entidade);
 
-        void Edit(T entidade);
+        bool Edit(T entidade);
 
         void Edit(IEnumerable<T> entidades);
 
@@ -44,7 +45,7 @@ namespace Blogapp.Domain.Repositories.Contract.Interfaces
         
         IEnumerable<T> Find(Expression<Func<T, bool>> filtro = null);
 
-        T FindByKey(object key);
+        T FindByKey(ObjectId key);
         
         T FindByKey(string key);
     }

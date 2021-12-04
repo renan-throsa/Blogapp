@@ -34,14 +34,14 @@ namespace Blogapp.Domain.Services
             userRepository.Edit(dto.ToEntity());
         }
 
-        public void Delete(UserDTO dto)
+        public void Delete(string id)
         {
-            userRepository.Delete(dto.ToEntity());
+            userRepository.DeleteByKey(id);
         }
 
-        public void Edit(UserDTO dto)
+        public bool Edit(UserDTO dto)
         {
-            throw new System.NotImplementedException();
+            return userRepository.Edit(dto.ToEntity());
         }
 
         public UserDTO Read(string id)
